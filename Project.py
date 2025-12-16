@@ -25,7 +25,7 @@ sp500_data = yf.download('^GSPC', start=start_date, end=end_date).dropna()
 energy_sector_data = yf.download('XLE', start=start_date, end=end_date).dropna()
 print(stock_price_data.head())
 
-api_key = 'HA3CDG8kslZcE0QlmBeldiDQEqkRsIpI'
+api_key = ''
 #%%
 def fetch_financial_ratios(ticker):
     url = f"https://financialmodelingprep.com/api/v3/ratios/{ticker}?limit=20&apikey={api_key}"
@@ -148,7 +148,7 @@ st.write("Data Source: [Yahoo Finance](https://www.yahoo.com/)")
 
 #%%
 #DCF model
-api_key = 'HA3CDG8kslZcE0QlmBeldiDQEqkRsIpI'
+api_key = ''
 
 ticker = 'RSG'
 url = f"https://financialmodelingprep.com/api/v3/cash-flow-statement/{ticker}?limit=10&apikey={api_key}"
@@ -321,5 +321,6 @@ st.subheader("M&A Deal Value Comparison")
 st.bar_chart(mna_df.set_index("Acquirer")["Deal Value (USD)"])
 
 st.write("Data Source: [Yahoo Finance](https://www.yahoo.com/)")
+
 
 #%%
